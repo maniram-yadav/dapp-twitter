@@ -1,17 +1,28 @@
 {
-  "name": "nextjs",
+  "name": "dapp-twitter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "hardhat": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:localhost": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:mainnet": "hardhat run scripts/deploy.js --network mainnet"
   },
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.5"
+    "next": "15.3.5",
+    "@metamask/detect-provider": "^2.0.0",
+    "@metamask/providers": "^22.1.0",
+    "autoprefixer": "^10.4.21",
+    "ethers": "^6.15.0",
+    "postcss": "^8.5.6"
   },
   "devDependencies": {
     "typescript": "^5",
@@ -19,6 +30,10 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "@nomicfoundation/hardhat-toolbox": "^6.0.0",
+    "@openzeppelin/contracts": "^5.3.0",
+    "dotenv": "^17.2.0",
+    "hardhat": "^2.25.0"
   }
 }
