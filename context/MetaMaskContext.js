@@ -36,11 +36,11 @@ export const MetaMaskProvider = ({ children }) => {
       const provider = await detectEthereumProvider();
       if (provider) {
         setProvider(provider);
-        const accounts = await provider.request({ method: 'eth_requestAccounts' });
-        logEnabled && console.log('accounts ',accounts);
-        if (accounts.length > 0) {
-          await handleConnection(accounts[0], provider);
-        }
+        // const accounts = await provider.request({ method: 'eth_requestAccounts' });
+        // logEnabled && console.log('accounts ',accounts);
+        // if (accounts.length > 0) {
+        //   await handleConnection(accounts[0], provider);
+        // }
         
         provider.on('accountsChanged', handleAccountsChanged);
         provider.on('chainChanged', () => window.location.reload());
@@ -140,3 +140,6 @@ export const MetaMaskProvider = ({ children }) => {
 };
 
 export const useMetaMask = () => useContext(MetaMaskContext);
+
+// c88-edi-service,
+// EDI stands of Electronic Data interchange and it is a protocol to exchange mesaages over api call like JSON and XML. Generating EDI request and processing api response data  is very much challenging, because there is very much irregularity in tha data and no standard library exists so far to manipulate the data. I have worked on EDI service for request generating, response processing, response categorization from scratch.

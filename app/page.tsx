@@ -1,10 +1,11 @@
 import { MetaMaskProvider } from "../context/MetaMaskContext";
-export default function Home() {
+import Home from "../components/Home";
+export default function Main() {
   return (
+    <div>
     <MetaMaskProvider>
-      <div className="flex flex-row flex-cols-3 justify-center">
-        <h1>Hello</h1>
-      </div>
+      <Home></Home>    
     </MetaMaskProvider>
+    </div>
   );
 }
